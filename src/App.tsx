@@ -3,14 +3,14 @@ import "./App.css";
 import { baseUrl } from "./urls";
 
 function App() {
-  const fetchServer = async () => {
-    const response = await fetch(baseUrl);
-    const data = await response.json();
-    console.log(data);
+  const getUsers = async () => {
+    const response = await fetch(`${baseUrl}/users`);
+    const users = await response.json();
+    console.log(users);
   };
 
   useEffect(() => {
-    fetchServer();
+    getUsers();
   }, []);
 
   return (
